@@ -1,7 +1,7 @@
 package e1;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
-public class LogicTest {
+class LogicTest {
 
   Logics logics;
   private final int SIZE = 5;
@@ -20,7 +20,7 @@ public class LogicTest {
 
   @Test
   void testHasNotPawnOnPosition() {
-    assertTrue(this.logics.hasPawn(0, 0));
+    assertFalse(this.logics.hasPawn(0, 0));
   }
 
   @Test
@@ -55,7 +55,7 @@ public class LogicTest {
 
   @Test
   void testValidKnightMove() {
-    assertFalse(this.logics.hit(3,2));
+    assertFalse(this.logics.hit(2,2));
     assertTrue(this.logics.hasKnight(2, 2));
   }
 
