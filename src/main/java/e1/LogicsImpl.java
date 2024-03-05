@@ -8,9 +8,12 @@ public class LogicsImpl implements Logics {
 	private Pair<Integer,Integer> knight;
 
 	private Chessboard chessboard;
+	private Chessmaster chessmaster;
 	 
     public LogicsImpl(int size){
 		this.chessboard = new ChessboardImpl(size);
+		this.chessmaster = new ChessmasterImpl();
+
         this.pawn = this.chessboard.randomPosition();
 		do {
 			this.knight = this.chessboard.randomPosition();
@@ -19,6 +22,7 @@ public class LogicsImpl implements Logics {
 
 	public LogicsImpl(int size, Pair<Integer,Integer> pawn, Pair<Integer,Integer> knight){
     	this.chessboard = new ChessboardImpl(size);
+		this.chessmaster = new ChessmasterImpl();
         this.pawn = pawn;
         this.knight = knight;	
     }
@@ -27,13 +31,8 @@ public class LogicsImpl implements Logics {
 	@Override
 	public boolean hit(int row, int col) {
 		if (this.chessboard.hasPosition(row, col)) {
-			// Below a compact way to express allowed moves for the knight
-		int x = row-this.knight.getX();
-		int y = col-this.knight.getY();
-		if (x!=0 && y!=0 && Math.abs(x)+Math.abs(y)==3) {
-			this.knight = new Pair<>(row,col);
+			this.knight = this.chessmaster.moveKnight(knight, row, col);
 			return this.pawn.equals(this.knight);
-		}
 		}
 		return false;
 	}
