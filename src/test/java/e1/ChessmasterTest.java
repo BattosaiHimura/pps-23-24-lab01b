@@ -1,7 +1,6 @@
 package e1;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -12,7 +11,7 @@ class ChessmasterTest {
     
     @BeforeEach
     void BeforeEach() {
-        this.chessmaster = null;
+        this.chessmaster = new ChessmasterImpl();
     }
 
     @Test
