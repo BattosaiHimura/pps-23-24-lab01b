@@ -19,8 +19,8 @@ public class ChessboardTest {
 
     @BeforeEach
     void BeforeEach() {
-        this.size = this.random.nextInt();
-        this.chessboard = null;
+        this.size = this.random.nextInt(8);
+        this.chessboard = new ChessboardImpl(this.size);
     }
 
     @Test
@@ -29,7 +29,7 @@ public class ChessboardTest {
         assertTrue(pos.getX() >= 0);
         assertTrue(pos.getY() >= 0);
         assertTrue(pos.getX() < size);
-        assertTrue(pos.getY() > size);
+        assertTrue(pos.getY() < size);
     }
 
     @Test
@@ -50,6 +50,6 @@ public class ChessboardTest {
     void testHasNoNegativePositions() {
         int negativeCol = -random.nextInt(size);
         int negativeRow = -random.nextInt(size);
-        assertThrows(IndexOutOfBoundsException.class, () -> this.chessboard.hasPosition(negativeCol, negativeRow));
+        assertThrows(IndexOutOfBoundsException.class, () -> this.chessboard.hasPosition(negativeRow, negativeCol));
     }
 }
