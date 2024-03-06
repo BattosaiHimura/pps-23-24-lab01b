@@ -10,7 +10,7 @@ public class LogicsImpl implements Logics {
 	private Chessboard chessboard;
 	private Chessmaster chessmaster;
 	 
-    public LogicsImpl(int size){
+    public LogicsImpl(int size) {
 		this.chessboard = new ChessboardImpl(size);
 		this.chessmaster = new ChessmasterImpl();
 
@@ -20,13 +20,12 @@ public class LogicsImpl implements Logics {
 		} while (this.pawn.equals(this.knight));
     }
 
-	public LogicsImpl(int size, Pair<Integer,Integer> pawn, Pair<Integer,Integer> knight){
+	public LogicsImpl(int size, Pair<Integer,Integer> pawn, Pair<Integer,Integer> knight) {
     	this.chessboard = new ChessboardImpl(size);
 		this.chessmaster = new ChessmasterImpl();
         this.pawn = pawn;
         this.knight = knight;	
     }
-    
     
 	@Override
 	public boolean hit(int row, int col) {
