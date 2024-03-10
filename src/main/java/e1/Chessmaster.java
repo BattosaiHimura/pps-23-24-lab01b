@@ -1,9 +1,10 @@
 package e1;
 
 public interface Chessmaster {
-    
+
     /**
-     * Checks wether if a given knight is allowed to move to a given position given its current one
+     * Checks wether if a given knight is allowed to move to a given position given
+     * its current one
      * and returns the new position if the move is valid, same position otherwise.
      * 
      * @param knight

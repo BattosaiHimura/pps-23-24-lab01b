@@ -12,7 +12,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class ChessboardTest {
-    
+
     Chessboard chessboard;
     private static final int SIZE = 8;
     private final Random random = new Random();

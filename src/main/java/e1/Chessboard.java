@@ -1,11 +1,12 @@
 package e1;
 
 public interface Chessboard {
-    
+
     /**
-     * Return a random position on the chessboard in terms of a pair of Integers representing the column and row numbers
+     * Return a random position on the chessboard in terms of a pair of Integers
+     * representing the column and row numbers
      */
-    Pair<Integer,Integer> randomPosition();
+    Pair<Integer, Integer> randomPosition();
 
     /**
      * 

@@ -13,7 +13,7 @@ class ChessboardImpl implements Chessboard {
 
     @Override
     public Pair<Integer, Integer> randomPosition() {
-        return new Pair<>(this.random.nextInt(size),this.random.nextInt(size));
+        return new Pair<>(this.random.nextInt(size), this.random.nextInt(size));
     }
 
     @Override
@@ -24,5 +24,5 @@ class ChessboardImpl implements Chessboard {
             throw new IndexOutOfBoundsException();
         }
     }
-    
+
 }
