@@ -1,6 +1,7 @@
 package e2.playground;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -22,11 +23,16 @@ class PlaygroundTest {
 
     @Test
     void testPlaygroundMineSetup() {
-
-        int totalMines = 10;
-
-        playground.setMines(totalMines);
-        assertEquals(totalMines, this.playground.getMines().size());
+        playground.setMines(SIZE);
+        assertEquals(SIZE, this.playground.getMines().size());
     }
 
+    @Test
+    void testIfThereIsAMineInAGivenPosition() {
+        playground.setMines(SIZE);
+        playground.getMines().stream().forEach(c -> {
+            assertTrue(this.playground.hasMine(c.getPosition()));
+        });
+        
+    }
 }
