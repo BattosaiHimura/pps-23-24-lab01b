@@ -20,4 +20,10 @@ public interface Grid {
      * @return
      */
     public List<Cell> getAdjacentCells(Pair<Integer, Integer> pos);
+
+    /**
+     * return the total number of cells in the grid
+     * @return
+     */
+    public Integer getTotalCells();
 }

@@ -6,11 +6,11 @@ public interface Cell {
 
     public boolean isEnabled();
 
-    public void setEnabled();
+    public void setEnabled(boolean enabled);
 
     public boolean isMarked();
 
-    public void setMarked();
+    public void setMarked(boolean marked);
 
     public String getText();
 
