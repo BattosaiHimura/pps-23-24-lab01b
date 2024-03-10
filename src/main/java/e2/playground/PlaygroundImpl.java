@@ -37,6 +37,7 @@ public class PlaygroundImpl implements Playground {
         return this.mines;
     }
 
+    @Override
     public Grid getGrid() {
         return this.grid;
     }
