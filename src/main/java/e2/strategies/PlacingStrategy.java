@@ -12,5 +12,5 @@ public interface PlacingStrategy {
      * @param elements
      * @return The positions where elements have been placed
      */
-    public List<Pair<Integer, Integer>> callStrategy(Integer elemens);
+    public List<Pair<Integer, Integer>> callStrategy(Integer elements);
 }

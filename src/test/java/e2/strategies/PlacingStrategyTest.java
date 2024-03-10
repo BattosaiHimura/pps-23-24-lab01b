@@ -11,7 +11,7 @@ class PlacingStrategyTest {
 
     @BeforeEach
     void BeforeEach() {
-        this.placingStrategy = null;
+        this.placingStrategy = new RandomPlacingStrategy();
     }
 
     @Test
