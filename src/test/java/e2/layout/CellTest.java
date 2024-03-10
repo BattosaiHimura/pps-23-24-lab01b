@@ -1,6 +1,8 @@
 package e2.layout;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -31,10 +33,13 @@ class CellTest {
     @Test
     void testCellIsMarked() {
         assertFalse(this.cell.isMarked());
+        assertNotEquals("F", this.cell.getText());
         this.cell.setMarked(true);
         assertTrue(this.cell.isMarked());
+        assertEquals("F", this.cell.getText());
         this.cell.setMarked(false);
         assertFalse(this.cell.isMarked());
+        assertNotEquals("F", this.cell.getText());
     }
 
     @Test
