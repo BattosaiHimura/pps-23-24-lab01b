@@ -33,6 +33,7 @@ public class CellImpl implements Cell {
 
     @Override
     public void setMarked(boolean marked) {
+        this.text = marked ? "F" : "";
         this.isMarked = marked;
     }
 
