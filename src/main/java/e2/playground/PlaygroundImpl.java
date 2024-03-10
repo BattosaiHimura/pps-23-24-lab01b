@@ -27,7 +27,7 @@ public class PlaygroundImpl implements Playground {
 
     @Override
     public void setMines(int totalMines) {
-        for(Pair<Integer, Integer> pos : this.strategy.callStrategy(this.size)) {
+        for (Pair<Integer, Integer> pos : this.strategy.callStrategy(this.size)) {
             this.mines.add(new CellImpl(pos));
         }
     }
@@ -39,6 +39,11 @@ public class PlaygroundImpl implements Playground {
 
     public Grid getGrid() {
         return this.grid;
+    }
+
+    @Override
+    public boolean hasMine(Pair<Integer, Integer> pos) {
+        return this.mines.stream().anyMatch(c -> c.getPosition().equals(pos));
     }
 
 }
