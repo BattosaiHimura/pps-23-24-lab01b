@@ -3,8 +3,6 @@ package e2.layout;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import java.util.List;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -17,7 +15,7 @@ class GridTest {
 
     @BeforeEach
     void BeforeEach() {
-        this.grid = null;
+        this.grid = new GridImpl(SIZE);
     }
 
     @Test
@@ -68,7 +66,7 @@ class GridTest {
             for (int j = 1; j < SIZE - 1; j++) {
                 Pair<Integer, Integer> pos = new Pair<>(i, j);
 
-                assertEquals(8, grid.getAdjacentCells(pos));
+                assertEquals(8, grid.getAdjacentCells(pos).size());
             }
         }
     }

@@ -15,8 +15,8 @@ class CellTest {
 
     @BeforeEach
     void BeforeEach() {
-        this.cell = null;
         this.pos = new Pair<>(5, 5);
+        this.cell = new CellImpl(this.pos);
     }
 
     @Test
